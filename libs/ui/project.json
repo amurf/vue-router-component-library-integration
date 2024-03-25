@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ui",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "command": "eslint libs/ui --ext .js,.ts,.vue --fix"
+    },
+    "sonar": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/ui",
+        "command": "sonar-scanner -Dsonar.login=$SONAR_LOGIN -Dsonar.projectVersion=$SONAR_VERSION"
+      }
+    }
+  }
+}
